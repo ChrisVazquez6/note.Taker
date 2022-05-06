@@ -17,4 +17,8 @@ app.get('/',(req, res) =>{
     res.sendFile(path.join(_dirname,'public', 'index.html'))
 })
 
+app.get('/', (req, res) => {
+  res.sendFile(path.join(_dirname, 'public', 'notes.html'))
+})
+
 app.listen(process.env.PORT || 3000)
