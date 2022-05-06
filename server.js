@@ -32,7 +32,7 @@ app.post('/api/notes',(req, res)=>{
   text: req.body.text,
   }
   notes.push(note)
-  res.json
+  res.json(200)
 })
 
 app.listen(process.env.PORT || 3000)
