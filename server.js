@@ -27,10 +27,12 @@ app.get('/api/notes',(req, res)=>{
 })
 
 app.post('/api/notes',(req, res)=>{
-  let newNote = {
+  let note = {
   title: req.body.title,
   text: req.body.text,
   }
+  notes.push(note)
+  res.json
 })
 
 app.listen(process.env.PORT || 3000)
