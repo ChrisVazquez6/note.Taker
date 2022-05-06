@@ -2,7 +2,7 @@ const express = require('express');
 const req = require('express/lib/request');
 const res = require('express/lib/response');
 
-const uid= require('uid')
+const {uid}= require('uid')
 
 const notes = require('./db/db.json')
 
