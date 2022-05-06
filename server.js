@@ -4,7 +4,7 @@ const res = require('express/lib/response');
 
 const {uid}= require('uid')
 
-const notes = require('./db/db.json')
+let notes = require('./db/db.json')
 
 const app= express()
 
@@ -35,6 +35,11 @@ app.post('/api/notes',(req, res)=>{
   }
   notes.push(note)
   res.json(200)
+})
+
+app.delete('/api/notes/:id', (req, res) => {
+  notes = notes.filter(note => note.id !== req.params.id)
+  res.json(notes)
 })
 
 app.listen(process.env.PORT || 3000)
