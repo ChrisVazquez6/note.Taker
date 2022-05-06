@@ -1,4 +1,6 @@
-const express = require('express')
+const express = require('express');
+const req = require('express/lib/request');
+const res = require('express/lib/response');
 
 
 
@@ -11,6 +13,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname,'public')));
 
-
+app.get('/',(req, res) =>{
+    res.sendFile()
+})
 
 app.listen(process.env.PORT || 3000)
