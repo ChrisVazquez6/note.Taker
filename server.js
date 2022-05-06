@@ -7,7 +7,8 @@ const notes = require('./db/db.json')
 
 const app= express()
 
-const path= require('path')
+const path= require('path');
+const { text } = require('express');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -26,9 +27,10 @@ app.get('/api/notes',(req, res)=>{
 })
 
 app.post('/api/notes',(req, res)=>{
-let newNote = {
-  
-}
+  let newNote = {
+  title: req.body.title,
+  text: req.body.text,
+  }
 })
 
 app.listen(process.env.PORT || 3000)
