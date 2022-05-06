@@ -2,6 +2,7 @@ const express = require('express');
 const req = require('express/lib/request');
 const res = require('express/lib/response');
 
+const uid= require('uid')
 
 const notes = require('./db/db.json')
 
@@ -30,6 +31,7 @@ app.post('/api/notes',(req, res)=>{
   let note = {
   title: req.body.title,
   text: req.body.text,
+  id: uid()
   }
   notes.push(note)
   res.json(200)
